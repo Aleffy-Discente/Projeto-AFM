@@ -42,7 +42,7 @@
     <h1>Aqui você pode  fazer o login ou cadastrar</h1>
     <h2>Jorge é Corno</h2>
     <div class="box">
-        <a href="Cadastro.php">Sign-up</a>
+        <a href="https://aleffy-discente.github.io/test/Cadastro.php">Sign-up</a>
         <a href="log.php">Login</a>
     </div>
 </body>
