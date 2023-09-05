@@ -99,7 +99,7 @@
     </style>
 </head>
 <body>
-    <a href="home.php">Home</a>
+    <a href="index.php">Home</a>
     <div class="box">
         <form action="cadastro.php" method="POST">
             <fieldset>

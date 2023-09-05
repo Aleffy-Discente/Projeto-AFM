@@ -49,7 +49,7 @@
     </style>
 </head>
 <body>
-    <a href="home.php">Home</a>
+    <a href="index.php">Home</a>
     <div class="tela-login">
         <h1>Login</h1>
         <form action="testLog.php" method="POST">
