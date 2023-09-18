@@ -10,6 +10,11 @@
         print_r('Email: ' . $email);
         print_r('Email: ' . $senha);
 
+        $sgl = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
+
+        $Result = $Conexao->query($sql);
+        print_r($result);
+        print_r($sql);
 
     }
     else
@@ -18,4 +23,3 @@
     }
 
 ?>
-Entrou ihihhi

@@ -45,11 +45,18 @@
             background-color: deepskyblue;
             cursor: pointer;
         }
-
+        .link
+        {
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+        }
     </style>
 </head>
 <body>
-    <a href="home.php">Home</a>
     <div class="tela-login">
         <h1>Login</h1>
         <form action="testLog.php" method="POST">
@@ -58,6 +65,11 @@
         <input type="password" name="senha" placeholder="Senha">
         <br></br>
         <input class="inputSubmit" type="submit" name="submit" VALUES="Enviar">
+        <br>
+        <p>Você ainda não fez o cadastro?</p>
+        <center>
+        <a class="link" href="Cadastro.php">Cadastrar-se</a>
+        </center>
         </form>
     </div>
 </body>

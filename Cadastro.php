@@ -96,12 +96,20 @@
         #submit:hover{
             background-image: linear-gradient(to right, rgb(0, 80, 172), rgb(80, 19, 195));
         }
+        .link
+        {
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+        }
     </style>
 </head>
 <body>
-    <a href="home.php">Home</a>
     <div class="box">
-        <form action="cadastro.php" method="POST">
+        <form action="Cadastro.php" method="POST">
             <fieldset>
                 <legend><b>Cadastro</b></legend>
                 <br>
@@ -126,6 +134,10 @@
                 <br></br>
                 <input type="submit" name="submit" id="submit">
             </fieldset>
+            <center>
+            <br>
+            <a class="link" href="Log.php">Login</a>
+            </center>
         </form>
     </div>
 </body>
