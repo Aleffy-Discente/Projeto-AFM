@@ -5,7 +5,7 @@
     $dbSenha = '';
     $dbNome = 'cadastros';
 
-    $Conexao = new mysqli($dbHot,$dbUsername, $dbSenha,$dbNome);
+    $conexao = new mysqli($dbHot,$dbUsername, $dbSenha,$dbNome);
 
     //if($Conexao->connect_errno)
     //{

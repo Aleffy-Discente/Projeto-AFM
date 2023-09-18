@@ -7,14 +7,22 @@
         $email = $_POST['email'];
         $senha = $_POST['senha'];
 
-        print_r('Email: ' . $email);
-        print_r('Email: ' . $senha);
+        //print_r('Email: ' . $email);
+        //print_r('Email: ' . $senha);
 
         $sgl = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
 
-        $Result = $Conexao->query($sql);
-        print_r($result);
-        print_r($sql);
+        $result = $conexao->query($sql);
+        //print_r($result);
+        //print_r($sql);
+        if(mysqli_num_rows($result) < 1)
+        {
+            print_r('Não existe');
+        }
+        else
+        {
+            print_r('Existe');
+        }
 
     }
     else

@@ -8,11 +8,11 @@
     
         include_once('config.php');
             
-        $Nome = $_POST['nome'];
-        $Email = $_POST['email'];
-        $Senha = $_POST['senha'];
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
 
-        $Result = mysqli_query($Conexao, "INSERT INTO usuarios(nome, email, senha) VALUES ('$Nome', '$Email','$Senha')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha) VALUES ('$nome', '$email','$senha')");
     }
     else 
     {
