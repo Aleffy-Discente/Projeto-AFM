@@ -33,6 +33,14 @@
     <fieldset class="Box">
         <legend>Atividade</legend>
         <div class="inputBox">
+            <input type="text" placeholder="Matéria" name="nome">
+            <label for="nome">Matéria</label>
+            <br>
+            <div class="inputBox">
+            <input type="date" name="data_Cad">
+            <label for="nome">Data de Entrega</label>
+            <br>
+            <div class="inputBox">
             <input type="text" id="nome" name="nome">
             <label for="nome">Nome:</label>
         </div>
