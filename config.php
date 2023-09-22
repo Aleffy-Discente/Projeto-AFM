@@ -2,12 +2,12 @@
 
     $dbHot = 'Localhost';
     $dbUsername = 'root';
-    $dbSenha = '';
-    $dbNome = 'cadastros';
+    $dbSenha = 'Aleffy.18';
+    $dbNome = 'cadastro';
 
     $conexao = new mysqli($dbHot,$dbUsername, $dbSenha,$dbNome);
 
-    //if($Conexao->connect_errno)
+    //if($conexao->connect_errno)
     //{
     //    echo "Erro";
     //}

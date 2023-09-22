@@ -12,11 +12,7 @@
         $email = $_POST['email'];
         $senha = $_POST['senha'];
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha) VALUES ('$nome', '$email','$senha')");
-    }
-    else 
-    {
-        echo "";
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha) VALUES ('$nome', '$email', '$senha')");
     }
 
 ?>
@@ -136,7 +132,7 @@
             </fieldset>
             <center>
             <br>
-            <a class="link" href="Log.php">Login</a>
+            <a class="link" href="log.php">Login</a>
             </center>
         </form>
     </div>
