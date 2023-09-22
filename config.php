@@ -3,7 +3,7 @@
     $dbHot = 'Localhost';
     $dbUsername = 'root';
     $dbSenha = 'Aleffy.18';
-    $dbNome = 'cadastro';
+    $dbNome = 'projetoafm';
 
     $conexao = new mysqli($dbHot,$dbUsername, $dbSenha,$dbNome);
 
