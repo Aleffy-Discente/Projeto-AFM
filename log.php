@@ -49,16 +49,16 @@
      .left-login-imagen
     {
         border-radius: 20px;
-        width: 55vh;
-        background-position: right bottom;
+        width: 68vh;
+        background-position: center bottom;
     }
      .right-login
      {
-        width: 50vh;
-        height: 100vh;
+        width: 100vh;
+        height: 60vh;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: right;
+        align-items: right;
      }
      .card-login
      {
@@ -79,6 +79,7 @@
      }
      .textfild
      {
+        color: black;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -87,11 +88,11 @@
      }
      .textfild > input
      {
+        margin-bottom: 10px;
         width: 100%;
         border-radius: 10px;
         padding: 15px;
         background-color:white;
-        color: white;
         font-size: 12pt;
         outline: none;
         box-sizing: border-box;
@@ -103,6 +104,7 @@
      }
     .btn-login
     {
+        color: white;
         width: 100%;
         margin: 25px;
         padding: 16px 0px;
@@ -110,12 +112,26 @@
         border-radius: 8px;
         outline: none;
         text-transform: uppercase;
-        font-weight: 800;
+        font-weight: 600;
         letter-spacing: 3px;
-        color: #0000BF;
-        background: #00ff88;
+        background-color: #1b74e4;
         cursor: pointer;
         box-shadow: 0px 10px 40px -12px #00ff8052;
+    }
+    .senha
+    {
+        margin-top: -25px;
+    }
+    .voltar
+    {
+        margin-top: 30px;
+        width: auto;
+        text-decoration: none;
+        color: white;
+        background-color: #42b72a;
+        padding: 10px 50px;
+        border-radius: 5px;
+        border: #0000FF;
     }
     @media only screen and (max-widht: 950px)
     {
@@ -142,9 +158,8 @@
             <h1>Faça o login<br>E veja suas atividades</h1>
             <img src="Mulher.svg" class="left-login-imagen" alt="Mulher-esquecida">
         </div>
-        <div class="right-login">
+        <form class="right-login" action="testLog" method="POST">
             <div class="card-login">
-                <h1>Login</h1>
                 <div class="textfild">
                     <label for="email">E-mail</label>
                     <input type="text" name="email" placeholder="E-mail">
@@ -154,8 +169,10 @@
                     <input type="password" name="senha" placeholder="Senha">
                 </div>
                 <input class="btn-login" type="submit" name="submit" VALUES="Enviar">
+                <a class="senha" href="a">Esqueceu a senha?</a>
+                <a class="voltar" href="home.php">Voltar ao Inicio</a>
             </div>
-        </div>
+        </form>
     </div>
     
 </body>

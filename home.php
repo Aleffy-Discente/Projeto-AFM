@@ -43,7 +43,7 @@
     <main>
         <aside>
             <h2 class="cor">Inscreva-se agora</h2>
-            <h2>na <span>AFricaM</span></h2>
+            <h2>na <span>AF</span>rica<strong>M</strong></h2>
             <p>
             Bem-vindo à AFricaM, sua solução para agendar atividades de forma simples e eficaz! Estamos aqui para simplificar a gestão do seu tempo, seja no trabalho ou lazer. Na AFricaM, valorizamos seu tempo e tornamos o agendamento uma tarefa fácil. Junte-se a nós e otimize seu dia a dia na AFricaM. Seja bem-vindo!
             </p>
