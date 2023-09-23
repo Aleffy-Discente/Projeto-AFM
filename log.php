@@ -158,7 +158,7 @@
             <h1>Faça o login<br>E veja suas atividades</h1>
             <img src="Mulher.svg" class="left-login-imagen" alt="Mulher-esquecida">
         </div>
-        <form class="right-login" action="testLog" method="POST">
+        <form class="right-login" action="testLog.php" method="POST">
             <div class="card-login">
                 <div class="textfild">
                     <label for="email">E-mail</label>

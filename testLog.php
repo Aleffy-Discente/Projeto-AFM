@@ -32,7 +32,7 @@
     }
     else
     {
-        
+      
         header('Location: log.php');
     }
     
