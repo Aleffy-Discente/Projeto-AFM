@@ -27,6 +27,15 @@
             <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
+            <div class="tela-login">
+        <form action="testLog.php" method="POST">
+        <input type="text" name="email" placeholder="E-mail">
+        <br></br>
+        <input type="password" name="senha" placeholder="Senha">
+        <br></br>
+        <input class="inputSubmit" type="submit" name="submit" VALUES="Enviar">
+        </form>
+    </div>
         </aside>
 
     </main>
