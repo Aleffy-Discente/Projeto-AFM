@@ -1,0 +1,122 @@
+@font-face 
+{
+    font-family: regular;
+    src: url(../Fonts/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: medium;
+    src: url(../Fonts/Poppins/Poppins-Medium.ttf);
+}
+@font-face {
+    font-family: light;
+    src: url(../Fonts/Poppins/Poppins-Light.ttf);
+}
+body
+{
+    font-family: regular;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+
+}
+header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#title
+{
+    flex-direction: column;
+    line-height: 10px;
+}
+h1
+{
+    font-weight: 200;
+}
+li
+{
+    display: inline-block;
+    margin: 20px;
+}
+main
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+h2
+{
+    margin-bottom: 10px;
+    font-size: 56px;
+    font-family: medium;
+    line-height: 10px;
+}
+p
+{
+    margin-top: 23px;
+    margin-bottom: 0px;
+    line-height: 23px;
+    max-width: 500px;
+    font-family: light;
+}
+span
+{
+    color: #12B322;
+}
+img
+{
+    width: 600px;
+}
+a
+{
+    color: #2813ccbb;
+}
+a:hover
+{
+    color: #0000FF;
+    transition: 0.3s all;
+}
+.cor
+{
+    color: #1919FF;
+}
+#butao
+{
+    border: 2px solid #0000ff;
+    padding: 10px;
+    border-radius: 15px;
+}
+#butao:hover
+{
+    background-color: #1919FF;
+    color: white;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+form [type="submit"]
+{
+    width: 50%;
+    height: 50px;
+    background-color: #0000B3;
+    color: white;
+    font-weight: bold;
+}
+form [type="submit"]:hover
+{
+    cursor: pointer;
+}
+input
+{
+    margin-top: 20px;
+    padding: 15px;
+    height: 20px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 15px;
+}

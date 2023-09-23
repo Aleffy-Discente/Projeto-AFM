@@ -132,7 +132,7 @@
             </fieldset>
             <center>
             <br>
-            <a class="link" href="log.php">Login</a>
+            <a class="link" href="Inicio.php">Home</a>
             </center>
         </form>
     </div>
