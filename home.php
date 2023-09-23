@@ -1,3 +1,20 @@
+<?php 
+
+    if(isset($_POST['submit']))
+    {
+        //print_r($_POST['nome']);
+        //print_r($_POST['email']);
+        //print_r($_POST['senha']);
+    
+        include_once('config.php');
+            
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha) VALUES ('$nome', '$email', '$senha')");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,7 +36,7 @@
             <a href="a"><li>Contato</li></a>
             <a href="a"><li>Sobre</li></a>
             <a href="a"><li>Serviços</li></a>
-            <a href="a" id="butao"><li>Já tem uma conta?</li></a>
+            <a href="log.php" id="butao"><li>Já tem uma conta?</li></a>
         </ul>
     </header>
 
@@ -31,7 +48,7 @@
             Bem-vindo à AFricaM, sua solução para agendar atividades de forma simples e eficaz! Estamos aqui para simplificar a gestão do seu tempo, seja no trabalho ou lazer. Na AFricaM, valorizamos seu tempo e tornamos o agendamento uma tarefa fácil. Junte-se a nós e otimize seu dia a dia na AFricaM. Seja bem-vindo!
             </p>
             <div class="box">
-            <form action="Cadastro.php" method="POST">
+            <form action="home.php" method="POST">
                 <input type="text" name="nome" placeholder="Nome" class="inputUser" required>
                 <input type="text" name="email" placeholder="E-mail" class="inputUser" required>
                 <input type="password" name="senha" placeholder="Senha" class="inputUser" required>
