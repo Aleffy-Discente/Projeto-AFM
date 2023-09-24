@@ -56,7 +56,7 @@
             </form>
         </aside>
         <article>
-            <img src="https://онлайн.росробот.рф/wp-content/uploads/2023/06/%D0%92%D0%B5%D0%B1-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B5%D1%80.jpg" alt="mulher-azul">
+            <img src="Flutua.svg" alt="mulher-azul">
         </article>
     </main>
 </body>
