@@ -1,9 +1,9 @@
 <?php
 
     $dbHot = 'Localhost';
-    $dbUsername = 'root';
-    $dbSenha = 'Aleffy.18';
-    $dbNome = 'projetoafm';
+    $dbUsername = 'Aleffy';
+    $dbSenha = 'Aleffy';
+    $dbNome = 'cadastros';
 
     $conexao = new mysqli($dbHot,$dbUsername, $dbSenha,$dbNome);
 

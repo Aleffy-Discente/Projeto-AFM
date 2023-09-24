@@ -32,10 +32,9 @@
             <h1>AFricaM</h1>
         </div>
         <ul>
-            <a href="a"><li>Inicio</li></a>
-            <a href="a"><li>Contato</li></a>
-            <a href="a"><li>Sobre</li></a>
-            <a href="a"><li>Serviços</li></a>
+            <a href="Dormir.svg"><li>Contato</li></a>
+            <a href="Astronauta.svg"><li>Sobre</li></a>
+            <a href="Gato serviço.svg"><li>Serviços</li></a>
             <a href="log.php" id="butao"><li>Já tem uma conta?</li></a>
         </ul>
     </header>

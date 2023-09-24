@@ -1,5 +1,22 @@
 <?php 
+
+if(isset($_POST['submit']))
+{
+    //print_r($_POST['materia']);
+    //print_r($_POST['data']);
+    //print_r($_POST['descricao']);
+
+    //include_once('config.php');
+        
+    //$materia = $_POST['materia'];
+    //$data = $_POST['data'];
+    //$descricao = $_POST['descricao'];
+
+    //$result = mysqli_query($conexa, "INSERT INTO dados(materia, data, descricao) VALUES ('$materia', '$data', '$descricao')");
+}
+
     session_start();
+    include_once('config.php');
     //print_r($_SESSION);
     if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
     {
@@ -8,6 +25,14 @@
         header('Location: Inicio.php');
     }
     $logado = $_SESSION['email'];
+
+    
+
+    //$sql = "SELECT * FROM dados ORDER BY id DESC";
+
+    //$result = $conexa->query($sql);
+
+    //print_r($result);
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +42,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | AFM</title>
     <style>
+        :root
+        {
+            --primary: #0000ff;
+            --secundary: #95989a;
+            --text-color: #000;
+            --text-secundary: #000;
+            --text-tertiary: #5d5d5d;
+        }
         @font-face 
         {
             font-family: regular;
@@ -32,155 +65,212 @@
             font-family: light;
             src: url(../Fonts/Poppins/Poppins-Light.ttf);
         }
-        body
+        *
         {
             font-family: regular;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px;
-
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        header
+        body
         {
+            background-color: #F0F2F5;
+        }
+        #event-description
+        {
+            
+            background-position: center;
+            background-size: cover;
+            height: 85vh;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
+            color: var(--text-color);    
         }
-        #title
+        #disclaymer h2
         {
-            flex-direction: column;
-            line-height: 10px;
+            font-size: 3em;
+            margin-bottom: 1em;
         }
-        h1
+        #disclaymer span
         {
-            font-weight: 200;
+            color: #2BE35E;
+            margin-bottom: 1em;
         }
-        li
+        #disclaymer strong
         {
-            display: inline-block;
-            margin: 20px;
+            color: red;
+            margin-bottom: 1em;
         }
-        main
+        #disclaymer .about-event
+        {
+            color: #0000ff;
+            font-family: light;
+            font-size: 2em;
+            text-transform: uppercase;
+            max-width: 350px;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+        #disclaymer p 
+        {
+            font-size: 1.2eem;
+            margin-bottom: 0.3;
+        }
+        #disclaymer .event-date
+        {
+            font-weight: bold;
+            color: red;
+        }
+        #subcription-form
+        {
+            background-color: white;
+            padding: 2em;
+            max-width: 22%;
+        }
+        #subcription-form p 
+        {
+            font-size: 1.5em;
+            color: var(--text-secundary);
+            margin-bottom: 1em;
+        }
+        .form-group
         {
             display: flex;
-            flex-direction: row;
-            margin-top: 50px;
+            flex-direction: column;
+            margin-bottom: 0.8em;
         }
-        h2
+        .form-group label
         {
-            margin-top: 15px;
-            font-size: 56px;
-            font-family: medium;
-            line-height: 10px;
+            color: var(--text-tertiary);
+            margin-bottom: .3em;
+            font-weight: bold;
         }
-        p
+        .form-group input
         {
-            margin-top: 23px;
-            margin-bottom: 0px;
-            line-height: 23px;
-            max-width: 500px;
-            font-family: light;
+            margin-bottom: 10px;
+            width: 100%;
+            border-radius: 10px;
+            padding: 15px;
+            background-color:white;
+            font-size: 12pt;
+            outline: none;
+            box-sizing: border-box;
+            padding: 6px 8px;
+            border-radius: 5px;
+            outline: none;
         }
-        span
+        .btn 
         {
-            color: #12B322;
+            background-color: var(--primary);
+            color: white;
+            text-transform: uppercase;
+            width: 100%;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            opacity: 0.8;
         }
-        img
+        .btn:hover
         {
-            width: 600px;
+            opacity: 1;
         }
         a
         {
-            color: #2813ccbb;
-        }
-        a:hover
-        {
-            color: #0000FF;
-            transition: 0.3s all;
-        }
-        .cor
-        {
-            color: #1919FF;
-        }
-        #butao
-        {
-            border: 2px solid #0000ff;
-            padding: 10px;
-            border-radius: 15px;
-        }
-        #butao:hover
-        {
-            background-color: #1919FF;
+            margin-top: 30px;
             color: white;
-        }
-        form
-        {
-            display: flex;
-            flex-direction: column;
-            width: 70%;
-        }
-        form [type="submit"]
-        {
-            width: 50%;
-            height: 50px;
-            background-color: #0000B3;
-            color: white;
-            font-weight: bold;
-        }
-        form [type="submit"]:hover
-        {
-            cursor: pointer;
-        }
-        input
-        {
-            margin-top: 20px;
-            padding: 15px;
-            height: 20px;
-            border-radius: 20px;
-            outline: none;
-            font-size: 15px;
-        }
-        strong
-        {
+            background-color: red;
             text-decoration: none;
-            color: red;
+            padding: 5px;
+        }
+        table
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td 
+        {
+            border: 1px solid black;
+        }
+
+        th, td 
+        {
+            padding: 10px;
+            text-align: center;
+        } 
+        h3
+        {
+            color: #F0F2F5;
         }
     </style>
+    <!-- Código -->
 </head>
 <body>
-    <header>
-        <div id="title">
-            <h1>StudyPlanner</h1>
-            <h1><span>AF</span>rica<strong>M</strong></h1>
-        </div>
-        <ul>
-            <a href="a"><li>Inicio</li></a>
-            <a href="a"><li>Contato</li></a>
-            <a href="a"><li>Sobre</li></a>
-            <a href="a"><li>Serviços</li></a>
-            <a href="sair.php" id="butao"><li>Log out</li></a>
-        </ul>
-    </header>
-    
-    <main>
-        <aside>
-            <h2 class="cor">Aqui você agenda</h2>
-            <h2>as suas atividades</h2>
-            <p>
-            Bem-vindo à AFricaM, sua solução para agendar atividades de forma simples e eficaz! Estamos aqui para simplificar a gestão do seu tempo, seja no trabalho ou lazer. Na AFricaM, valorizamos seu tempo e tornamos o agendamento uma tarefa fácil. Junte-se a nós e otimize seu dia a dia na AFricaM. Seja bem-vindo!
+    <a href="sair.php">Sair</a>
+    <header id="event-description">
+        <div id="disclaymer">
+            <h2><span>AF</span>rica<strong>M</strong></h2>
+            <p class="about-event">
+                Aqui você pode agendar suas atividades
             </p>
-            <div class="box">
-            <form action="home.php" method="POST">
-                <input type="text" name="materia" placeholder="Matéria" class="inputUser" required>
-                <input type="text" name="Descricao" placeholder="Descrição" class="inputUser" required>
-                <input type="datetime" name="data" class="inputUser" required>
-                <input type="submit" name="submit" id="submit">
+            <p>Infelizmente não posso criar outro banco de dados</p>
+            <p class="event-date">Esperaremos até que eu descubra um outro banco de dados</p>
+        </div>
+        <div id="subcription-form">
+            <p>Prencha o fórmulario para agendar suas atividades</p>
+            <form action="inicio.php" method="POST">
+                <div class="form-group">
+                    <label for="materia">Matéria</label>
+                    <input type="text" name="materia" placeholder="Digite a matéria">
+                </div>
+                <div class="form-group">
+                    <label for="data">Data de entrega</label>
+                    <input type="datetime-local" name="data">
+                </div>
+                <div class="form-group">
+                    <label for="descricao">descrição</label>
+                    <input type="text" name="descricao" placeholder="Descrição">
+                </div>
+                <input type="submit" name="submit"class="btn" value="Enviar >">
             </form>
-        </aside>
-        <article>
-            <img src="https://онлайн.росробот.рф/wp-content/uploads/2023/06/%D0%92%D0%B5%D0%B1-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B5%D1%80.jpg" alt="mulher-azul">
-        </article>
-    </main>
-</body>
-</html>
+        </div>
+    </header>
+    <table>
+    <tr>
+        <th>Matéria</th>
+        <th>Data de entrega</th>
+        <th>Descrição</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </table>
+    <h3>a</h3>
+    <h3>a</h3>
+    <h3>a</h3>
+    <h3>a</h3>
+    <h3>a</h3>
+    <h3>a</h3>
+    <h3>a</h3>
+    <h3>a</h3>
+
+    </body>
+    </html>

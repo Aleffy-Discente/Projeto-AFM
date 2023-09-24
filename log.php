@@ -155,7 +155,7 @@
 <body>
     <div class="main-login">
         <div class="left-login">
-            <h1>Faça o login<br>E veja suas atividades</h1>
+            <h1>Bem vindo de volta!<br>Suas atividades o aguardam</h1>
             <img src="Mulher.svg" class="left-login-imagen" alt="Mulher-esquecida">
         </div>
         <form class="right-login" action="testLog.php" method="POST">
@@ -169,7 +169,7 @@
                     <input type="password" name="senha" placeholder="Senha">
                 </div>
                 <input class="btn-login" type="submit" name="submit" VALUES="Enviar">
-                <a class="senha" href="a">Esqueceu a senha?</a>
+                <a class="senha" href="Veio.svg">Esqueceu a senha?</a>
                 <a class="voltar" href="home.php">Voltar ao Inicio</a>
             </div>
         </form>
