@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Imagens/Logo massa.png" type="image/x-icon">
+    <link href="../Projeto-AFM/Styles/media.css" rel="stylesheet">
     <title>Login</title>
     <style>
     @font-face 
