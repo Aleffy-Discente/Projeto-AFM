@@ -76,7 +76,14 @@ if(isset($_POST['submit']))
         }
         body
         {
+            height: 98vh;  
+            background-image: url("Imagens/Logo_Atulizada-removebg-preview.png");
+            background-position: left top;
+            margin-right: 60px;
+            background-repeat: no-repeat;
+            background-size: 200px;
             background-color: #F0F2F5;
+
         }
         #event-description
         {
@@ -91,6 +98,7 @@ if(isset($_POST['submit']))
         }
         #disclaymer h2
         {
+            color: #0000ff;
             font-size: 3em;
             margin-bottom: 1em;
         }
@@ -106,7 +114,7 @@ if(isset($_POST['submit']))
         }
         #disclaymer .about-event
         {
-            color: #0000ff;
+            color: #000;
             font-family: light;
             font-size: 2em;
             text-transform: uppercase;
@@ -205,6 +213,10 @@ if(isset($_POST['submit']))
         {
             color: #F0F2F5;
         }
+        img
+        {
+            background-position: center top;
+        }
     </style>
     <!-- Código -->
 </head>
@@ -212,7 +224,8 @@ if(isset($_POST['submit']))
     <a href="sair.php">Sair</a>
     <header id="event-description">
         <div id="disclaymer">
-            <h2><span>AF</span>rica<strong>M</strong></h2>
+            
+            <h2>Bem vindo!</h2>
             <p class="about-event">
                 Aqui você pode agendar suas atividades
             </p>

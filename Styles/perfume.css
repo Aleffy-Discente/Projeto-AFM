@@ -13,11 +13,22 @@
 }
 body
 {
+    height: 98vh;  
+    background-image: url("Imagens/Logo_Atulizada-removebg-preview.png");
+    background-position: center;
+    margin-right: 60px;
+    background-size: 200px;
+    background-color: #F0F2F5;
+
     font-family: regular;
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px;
 
+}
+#title > h1
+{
+    font-family: light;
 }
 header
 {
@@ -124,9 +135,4 @@ strong
 {
     text-decoration: none;
     color: red;
-}
-img
-{
-
-    
 }

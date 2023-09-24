@@ -18,6 +18,14 @@
 }
     body
     {
+        height: 98vh;  
+        background-image: url("Imagens/Logo_Atulizada-removebg-preview.png");
+        background-position: left top;
+        margin-right: 60px;
+        background-repeat: no-repeat;
+        background-size: 200px;
+        background-color: #F0F2F5;
+    
         align-items: center;
         justify-content: center;
         display: flex;
@@ -135,6 +143,10 @@
         border-radius: 5px;
         border: #0000FF;
     }
+    span
+    {
+        color: #ff0000;
+    }
     @media only screen and (max-widht: 950px)
     {
         .card-login
@@ -157,7 +169,7 @@
 <body>
     <div class="main-login">
         <div class="left-login">
-            <h1>Bem vindo de volta!<br>Suas atividades o aguardam</h1>
+            <h1>Bem vindo de volta!<br><span>Suas atividades o aguardam</span</h1>
             <img src="Mulher.svg" class="left-login-imagen" alt="Mulher-esquecida">
         </div>
         <form class="right-login" action="testLog.php" method="POST">
