@@ -1,18 +1,29 @@
 <?php 
 
-if(isset($_POST['submit']))
+if(!empty($_GET['id']))
 {
-    //print_r($_POST['materia']);
-    //print_r($_POST['data']);
-    //print_r($_POST['descricao']);
-
     include_once('config2.php');
-        
-    $materia = $_POST['materia'];
-    $data = $_POST['data'];
-    $descricao = $_POST['descricao'];
 
-    $result = mysqli_query($conexa, "INSERT INTO agendas(materia, data, descricao) VALUES ('$materia', '$data', '$descricao')");
+    $id = $_GET['id'];
+
+    $sqlSelect = "SELECT * FROM agendas WHERE id=$id";
+
+    $result = $conexa->query($sqlSelect);
+
+    if($result->num_rows > 0)
+    {
+        while($user_data = mysqli_fetch_assoc($result))
+        {
+            $materia = $user_data['materia'];
+            $data = $user_data['data'];
+            $descricao = $user_data['descricao'];
+        }
+        //print_r($materia);
+    }
+    else
+    {
+        header('Location: Inicio.php');
+    }
 }
 
     session_start();
@@ -217,6 +228,10 @@ if(isset($_POST['submit']))
         {
             background-position: center top;
         }
+        span
+        {
+            color: red;
+        }
     </style>
     <!-- Código -->
 </head>
@@ -225,29 +240,30 @@ if(isset($_POST['submit']))
     <header id="event-description">
         <div id="disclaymer">
             
-            <h2>Bem vindo!</h2>
+            <h2>O que deseja mudar?</h2>
             <p class="about-event">
-                Aqui você pode agendar suas atividades
+                Aqui você pode <span>Editar</span> suas atvidades
             </p>
             <p>Aproveite o nosso mais novo banco de dados</p>
             <p class="event-date">Espero que goste dessa maravilhosa ideia!</p>
         </div>
         <div id="subcription-form">
-            <p>Prencha o fórmulario para agendar suas atividades</p>
-            <form action="inicio.php" method="POST">
+            <p>Prencha o fórmulario para editar as suas atividades</p>
+            <form action="saveEdit.php" method="POST">
                 <div class="form-group">
                     <label for="materia">Matéria</label>
-                    <input type="text" name="materia" placeholder="Digite a matéria">
+                    <input type="text" name="materia" placeholder="Digite a matéria" value="<?php echo $materia ?>">
                 </div>
                 <div class="form-group">
                     <label for="data">Data de entrega</label>
-                    <input type="date" name="data">
+                    <input type="date" name="data" value="<?php echo $data ?>">
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descrição</label>
-                    <input type="text" name="descricao" placeholder="Descrição">
+                    <input type="text" name="descricao" placeholder="Descrição" value="<?php echo $descricao ?>">
                 </div>
-                <input type="submit" name="submit"class="btn" value="Enviar >">
+                <input type="hidden" name="id" value="<?php echo $id ?>">
+                <input type="submit" name="update"class="btn" value="Editar >">
             </form>
         </div>
     </header>
@@ -272,16 +288,11 @@ if(isset($_POST['submit']))
                     echo "<td>".$user_data['data']."</td>";
                     echo "<td>".$user_data['descricao']."</td>";
                     echo "<td>
-                        <a class='btn btn-sm btn-primary' href='edit.php?id=$user_data[id]'>
+                        <a class='btn btn-sm btn-primary' href='#'>
                         <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
                             <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
                             <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
                         </svg>
-                        </a>
-                        <a class='btn btn-sm btn-primary href='edit.php?id=$user_data[id]'>
-                            <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16 fill='currentColor' class='bi bi-trash-fill' viewBox='0 0 16 16'>
-                                <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>
-                            </svg>
                         </a>
                     </td>";
 
