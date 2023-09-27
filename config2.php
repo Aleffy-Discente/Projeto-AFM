@@ -2,8 +2,8 @@
 
     $dbHost = 'Localhost';
     $dbUsername = 'root';
-    $dbPassword = 'Aleffy.18';
-    $dbName = 'cadastros';
+    $dbPassword = '';
+    $dbName = 'cadastro';
 
     $conexa = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 

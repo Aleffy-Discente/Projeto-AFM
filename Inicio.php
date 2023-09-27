@@ -26,7 +26,20 @@ if(isset($_POST['submit']))
     }
     $logado = $_SESSION['email'];
 
-    
+    if(!empty($_GET['search']))
+    {
+        //echo "Contem";
+
+        $recebe = $_GET['search'];
+
+        $sql = "SELECT * FROM agendas WHERE id LIKE '%$recebe%' or materia LIKE '%$recebe%' or descricao LIKE '%$recebe%'  or data LIKE '%$recebe%' ORDER BY id DESC";
+    }
+    else
+    {
+        //echo "Não tem nada";
+        
+        $sql = "SELECT * FROM agendas ORDER BY id DESC";
+    }
 
     $sql = "SELECT * FROM agendas ORDER BY id DESC";
 
@@ -332,4 +345,19 @@ if(isset($_POST['submit']))
     <h3>a</h3>
 
     </body>
+    <script>
+        var search = document.getElementById('pesquisar');
+
+        search.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") 
+            {
+                searchData();
+            }
+        });
+
+        function searchData()
+        {
+            window.location = 'Inicio.php?search='+search.value;
+        }
+    </script>
     </html>
