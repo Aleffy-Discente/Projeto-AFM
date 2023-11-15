@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -170,9 +170,9 @@
     <div class="main-login">
         <div class="left-login">
             <h1>Bem vindo de volta!<br><span>Suas atividades o aguardam</span</h1>
-            <img src="Mulher.svg" class="left-login-imagen" alt="Mulher-esquecida">
+            <img src="Imagens/Mulher.svg" class="left-login-imagen" alt="Mulher-esquecida">
         </div>
-        <form class="right-login" action="testLog.php" method="POST">
+        <form class="right-login" action="Configs/testLog.php" method="POST">
             <div class="card-login">
                 <div class="textfild">
                     <label for="email">E-mail</label>
@@ -183,7 +183,7 @@
                     <input type="password" name="senha" placeholder="Senha">
                 </div>
                 <input class="btn-login" type="submit" name="submit" VALUES="Enviar">
-                <a class="senha" href="Veio.svg">Esqueceu a senha?</a>
+                <a class="senha" href="Imagens/Veio.svg">Esqueceu a senha?</a>
                 <a class="voltar" href="home.php">Voltar ao Inicio</a>
             </div>
         </form>

@@ -90,7 +90,7 @@ if(!empty($_GET['id']))
             height: 98vh;  
             background-image: url("Imagens/Logo_Atulizada-removebg-preview.png");
             background-position: left top;
-            margin-right: 60px;
+            
             background-repeat: no-repeat;
             background-size: 200px;
             background-color: #F0F2F5;
@@ -196,6 +196,32 @@ if(!empty($_GET['id']))
         {
             opacity: 1;
         }
+        .btndn
+        {
+            background-color: #00ff00;
+            color: white;
+            text-transform: uppercase;
+            width: 100%;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        .btnd
+        {
+            background-color: #ff0000;
+            color: white;
+            text-transform: uppercase;
+            width: 100%;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        .btn:hover
+        {
+            opacity: 1;
+        }
         a
         {
             margin-top: 30px;
@@ -228,9 +254,15 @@ if(!empty($_GET['id']))
         {
             background-position: center top;
         }
-        span
+        .box-search
         {
-            color: red;
+            display: flex;
+            justify-content: center;
+            gap: 1%;
+        }
+        button
+        {
+            margin-bottom: 30px;
         }
     </style>
     <!-- Código -->
@@ -240,11 +272,11 @@ if(!empty($_GET['id']))
     <header id="event-description">
         <div id="disclaymer">
             
-            <h2>O que deseja mudar?</h2>
+            <h2>O que deseja MUDAR?</h2>
             <p class="about-event">
                 Aqui você pode <span>Editar</span> suas atvidades
             </p>
-            <p>Aproveite o nosso mais novo banco de dados</p>
+            <p>Aproveite a AFricaM</p>
             <p class="event-date">Espero que goste dessa maravilhosa ideia!</p>
         </div>
         <div id="subcription-form">

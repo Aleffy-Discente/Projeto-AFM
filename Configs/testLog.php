@@ -21,19 +21,19 @@
         {
             unset($_SESSION['email']);
             unset($_SESSION['senha']);
-            header('Location: log.php');
+            header('Location: /Projeto-AFM/log.php');
         }
         else
         {
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
-           header('Location: Inicio.php');
+            header('Location: /Projeto-AFM/Inicio.php');
         }
     }
     else
     {
       
-        header('Location: log.php');
+        header('Location: /Projeto-AFM/log.php');
     }
     
 

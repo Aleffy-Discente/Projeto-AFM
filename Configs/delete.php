@@ -16,6 +16,6 @@
             $resultDelete = $conexa->query($sqlDelete);
         }
     }
-    header('Location: Inicio.php');
+    header('Location: /Projeto-AFM/Inicio.php');
    
 ?>

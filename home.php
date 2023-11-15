@@ -6,7 +6,7 @@
         //print_r($_POST['email']);
         //print_r($_POST['senha']);
     
-        include_once('config.php');
+        include_once('Configs/config.php');
             
         $nome = $_POST['nome'];
         $email = $_POST['email'];
@@ -33,9 +33,9 @@
             <h1>AFricaM</h1>
         </div>
         <ul>
-            <a href="Dormir.svg"><li>Contato</li></a>
-            <a href="Astronauta.svg"><li>Sobre</li></a>
-            <a href="Gato serviço.svg"><li>Serviços</li></a>
+            <a href="Imagens/Dormir.svg"><li>Contato</li></a>
+            <a href="Imagens/Astronauta.svg"><li>Sobre</li></a>
+            <a href="Imagens/Gato.svg"><li>Serviços</li></a>
             <a href="log.php" id="butao"><li>Já tem uma conta?</li></a>
         </ul>
     </header>
@@ -56,7 +56,7 @@
             </form>
         </aside>
         <article>
-            <img src="Flutua.svg" alt="mulher-azul">
+            <img src="Imagens/Flutua.svg" alt="mulher-azul">
         </article>
     </main>
 </body>

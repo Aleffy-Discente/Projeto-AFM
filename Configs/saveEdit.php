@@ -13,6 +13,6 @@
 
         $result = $conexa->query($sqlUpdate);
     }
-    header('Location: Inicio.php')
+    header('Location: /Projeto-AFM/Inicio.php')
 
 ?>
