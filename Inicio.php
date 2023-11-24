@@ -7,6 +7,27 @@ if(isset($_POST['submit']))
     //print_r($_POST['descricao']);
 
     include_once('Configs/config2.php');
+
+    
+    $val = mysqli_query($conexa,'select 1 from `agendas` LIMIT 1');
+
+    if($val === FALSE)
+    {
+        $sql = "CREATE TABLE agendas(
+            id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            data DATE NOT NULL,
+            materia MEDIUMTEXT NOT NULL,
+            descricao MEDIUMTEXT NOT NULL,
+            )";
+
+        if ($conexa->query($sql) === TRUE) {
+            echo "Table MyGuests created successfully";
+        } else {
+            echo "Error creating table: " . $conexa->error;
+        }
+    }
+
+
         
     $materia = $_POST['materia'];
     $data = $_POST['data'];

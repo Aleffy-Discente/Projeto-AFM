@@ -7,6 +7,24 @@
         //print_r($_POST['senha']);
     
         include_once('Configs/config.php');
+
+        $val = mysqli_query($conexao,'SELECT 1 FROM `usuarios` LIMIT 1');
+
+        if($val === FALSE)
+        {
+            $sql = "CREATE TABLE 'cadastro'.'usuarios'(
+                id INT(6) AUTO_INCREMENT PRIMARY KEY,
+                nome VARCHAR(50),
+                email VARCHAR(110),
+                senha VARCHAR(45)
+                )";
+
+            if ($conexao->query($sql) === TRUE) {
+                echo "Table MyGuests created successfully";
+            } else {
+                echo "Error creating table: " . $conexao->error;
+            }
+        }
             
         $nome = $_POST['nome'];
         $email = $_POST['email'];
