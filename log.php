@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Imagens/Logo massa.png" type="image/x-icon">
     <link href="../Projeto-AFM/Styles/media.css" rel="stylesheet">
-    <title>Login</title>
+    <title>Login | AFM</title>
     <style>
     @font-face 
     {
@@ -184,7 +184,7 @@
                 </div>
                 <input class="btn-login" type="submit" name="submit" VALUES="Enviar">
                 <a class="senha" href="Imagens/Veio.svg">Esqueceu a senha?</a>
-                <a class="voltar" href="home.php">Voltar ao Inicio</a>
+                <a class="voltar" href="index.php">Voltar ao Inicio</a>
             </div>
         </form>
     </div>

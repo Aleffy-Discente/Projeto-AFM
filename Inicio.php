@@ -1,33 +1,43 @@
 <?php 
+ include_once('Configs/config2.php');
 
+ $table_exists_query = "SHOW TABLES LIKE 'agendas'";
+ $table_exists_result = $conexa->query($table_exists_query);
+ //print_r($table_exists_result);
+
+ if ($table_exists_result->num_rows == 0) {
+     //A tabela 'agendas' não existe
+     $create_table_query = "CREATE TABLE agendas (
+         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+             materia VARCHAR(45) NOT NULL,
+             descricao VARCHAR(110) NOT NULL,
+             data date NOT NULL
+             )";
+
+     if ($conexa->query($create_table_query) === TRUE) {
+         echo "Tabela 'agendas' criada com sucesso!";
+     } else {
+         echo "Erro ao criar tabela: " . $conexa->error;
+     }
+ } else {
+     echo "A tabela 'agendas' já existe.";
+ }
 if(isset($_POST['submit']))
 {
     //print_r($_POST['materia']);
     //print_r($_POST['data']);
     //print_r($_POST['descricao']);
 
-    include_once('Configs/config2.php');
-
-    
-    $val = mysqli_query($conexa,'select 1 from `agendas` LIMIT 1');
-
-    if($val === FALSE)
-    {
-        $sql = "CREATE TABLE agendas(
-            id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-            data DATE NOT NULL,
-            materia MEDIUMTEXT NOT NULL,
-            descricao MEDIUMTEXT NOT NULL,
-            )";
-
-        if ($conexa->query($sql) === TRUE) {
-            echo "Table MyGuests created successfully";
-        } else {
-            echo "Error creating table: " . $conexa->error;
-        }
-    }
-
-
+   
+        /*
+        CREATE TABLE `cadastros`.`agendas` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `materia` VARCHAR(45) NOT NULL,
+  `descricao` MEDIUMTEXT NOT NULL,
+  `data` DATE NOT NULL,
+  PRIMARY KEY (`id`));
+  */
+        
         
     $materia = $_POST['materia'];
     $data = $_POST['data'];

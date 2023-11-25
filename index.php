@@ -8,23 +8,26 @@
     
         include_once('Configs/config.php');
 
-        $val = mysqli_query($conexao,'SELECT 1 FROM `usuarios` LIMIT 1');
+        $table_exists_query = "SHOW TABLES LIKE 'usuarios'";
+        $table_exists_result = $conexao->query($table_exists_query);
 
-        if($val === FALSE)
-        {
-            $sql = "CREATE TABLE 'cadastro'.'usuarios'(
-                id INT(6) AUTO_INCREMENT PRIMARY KEY,
-                nome VARCHAR(50),
-                email VARCHAR(110),
-                senha VARCHAR(45)
-                )";
+        if ($table_exists_result->num_rows == 0) {
+        // A tabela 'usuarios' não existe
+            $create_table_query = "CREATE TABLE usuarios (
+                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                    nome VARCHAR(45) NOT NULL,
+                    email VARCHAR(110) NOT NULL,
+                    senha VARCHAR(50) NOT NULL
+                    )";
 
-            if ($conexao->query($sql) === TRUE) {
-                echo "Table MyGuests created successfully";
+                if ($conexao->query($create_table_query) === TRUE) {
+                //echo "Tabela 'usuarios' criada com sucesso!";
+                } else {
+                    echo "Erro ao criar tabela: " . $conexao->error;
+                }
             } else {
-                echo "Error creating table: " . $conexao->error;
+                //echo "A tabela 'usuarios' já existe.";
             }
-        }
             
         $nome = $_POST['nome'];
         $email = $_POST['email'];
@@ -41,7 +44,7 @@
     <link href="../Projeto-AFM/Styles/perfume.css" rel="stylesheet">
     <link href="../Projeto-AFM/Styles/media.css" rel="stylesheet">
     <link rel="shortcut icon" href="Imagens/Logo massa.png" type="image/x-icon">
-    <title>Home</title>
+    <title>Home | AFM</title>
     </style>
 </head>
 <body>
@@ -66,7 +69,7 @@
             Bem-vindo à AFricaM, sua solução para agendar atividades de forma simples e eficaz! Estamos aqui para simplificar a gestão do seu tempo, seja no trabalho ou lazer. Na AFricaM, valorizamos seu tempo e tornamos o agendamento uma tarefa fácil. Junte-se a nós e otimize seu dia a dia na AFricaM. Seja bem-vindo!
             </p>
             <div class="box">
-            <form action="home.php" method="POST">
+            <form action="index.php" method="POST">
                 <input type="text" name="nome" placeholder="Nome" class="inputUser" required>
                 <input type="text" name="email" placeholder="E-mail" class="inputUser" required>
                 <input type="password" name="senha" placeholder="Senha" class="inputUser" required>
