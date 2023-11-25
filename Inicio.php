@@ -15,12 +15,12 @@
              )";
 
      if ($conexa->query($create_table_query) === TRUE) {
-         echo "Tabela 'agendas' criada com sucesso!";
+         //echo "Tabela 'agendas' criada com sucesso!";
      } else {
          echo "Erro ao criar tabela: " . $conexa->error;
      }
  } else {
-     echo "A tabela 'agendas' já existe.";
+     //echo "A tabela 'agendas' já existe.";
  }
 if(isset($_POST['submit']))
 {
@@ -56,7 +56,6 @@ if(isset($_POST['submit']))
         header('Location: Inicio.php');
     }
     $logado = $_SESSION['email'];
-
     if(!empty($_GET['search']))
     {
         //echo "Contem";
@@ -305,7 +304,7 @@ if(isset($_POST['submit']))
     <header id="event-description">
         <div id="disclaymer">
             
-            <h2>Bem vindo!</h2>
+            <h2>Bem vindo!</h2><strong><?php print_r($logado);?></strong width="20px">
             <p class="about-event">
                 Aqui você pode agendar suas atividades
             </p>

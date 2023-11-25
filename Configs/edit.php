@@ -272,7 +272,7 @@ if(!empty($_GET['id']))
     <header id="event-description">
         <div id="disclaymer">
             
-            <h2>O que deseja MUDAR?</h2>
+            <h2>Deseja MUDAR?</h2>
             <p class="about-event">
                 Aqui você pode <span>Editar</span> suas atvidades
             </p>
