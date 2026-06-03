@@ -1,6 +1,6 @@
 <?php
 
-require_once '../config/migrate.php';
+require_once '/../config/migrate.php';
 
 Migration::run();
 

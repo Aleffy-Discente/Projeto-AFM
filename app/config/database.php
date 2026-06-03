@@ -23,9 +23,7 @@ class Database
             );
         }
 
-        $sql =
-        "CREATE DATABASE
-        IF NOT EXISTS {$this->dbName}
+        $sql = "CREATE DATABASE IF NOT EXISTS {$this->dbName}
         CHARACTER SET utf8mb4
         COLLATE utf8mb4_unicode_ci";
 

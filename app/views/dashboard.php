@@ -1,10 +1,10 @@
 <?php
 
 require_once
-    '../middleware/auth.php';
+'../middleware/auth.php';
 
 require_once
-    '../models/Agenda.php';
+'../models/Agenda.php';
 
 $model = new Agenda();
 
