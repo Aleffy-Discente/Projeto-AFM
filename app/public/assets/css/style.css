@@ -1,0 +1,52 @@
+body {
+    background: #f4f6f9;
+    min-height: 100vh;
+}
+
+.auth-container {
+    min-height: 100vh;
+}
+
+.auth-card {
+    border: none;
+    border-radius: 18px;
+    box-shadow:
+        0 10px 30px rgba(
+            0,0,0,0.08
+        );
+}
+
+.logo-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-control {
+    border-radius: 12px;
+}
+
+.btn-custom {
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: 600;
+}
+
+.dashboard-card {
+    border: none;
+    border-radius: 18px;
+    box-shadow:
+    0 5px 20px rgba(
+        0,0,0,0.06
+    );
+}
+
+.table-container {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.badge-status {
+    padding: 8px 12px;
+    border-radius: 12px;
+}
