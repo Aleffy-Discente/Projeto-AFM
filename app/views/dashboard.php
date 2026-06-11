@@ -51,7 +51,7 @@ $pendentes = count(array_filter($agendas,
 
             <span class="text-white me-3"><?= htmlspecialchars($_SESSION['nome']) ?></span>
 
-            <a href="../../public/logout.php" class="btn btn-danger">Sair</a>
+            <a href="../public/logout.php" class="btn btn-danger">Sair</a>
 
         </div>
 

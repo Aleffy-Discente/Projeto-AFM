@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../public/assets/css/style.css">
+    <link rel="stylesheet" href="../public/assets/css/style.css">
 
 </head>
 
@@ -24,7 +24,6 @@
                 <p class="text-muted">Cadastre-se no sistema</p>
 
             </div>
-
             <form action="../controllers/AuthController.php?acao=register" method="POST">
 
                 <div class="mb-3">
@@ -69,7 +68,7 @@
 
             <div class="text-center mt-4">
 
-                <a href="../../public/index.php" class="btn btn-outline-secondary">Voltar ao login</a>
+                <a href="../public/index.php" class="btn btn-outline-secondary">Voltar ao login</a>
 
             </div>
 

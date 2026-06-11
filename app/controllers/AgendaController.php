@@ -41,8 +41,7 @@ class AgendaController
         );
 
         header(
-            "Location:
-            ../../app/views/dashboard.php"
+            "Location: /Projeto-AFM/app/views/dashboard.php"
         );
 
         exit;
@@ -69,8 +68,7 @@ class AgendaController
             ->deletar($id);
 
         header(
-            "Location:
-            ../../app/views/dashboard.php"
+            "Location: /Projeto-AFM/app/views/dashboard.php"
         );
 
         exit;
@@ -115,8 +113,7 @@ class AgendaController
             );
 
         header(
-            "Location:
-            ../../app/views/dashboard.php"
+            "Location: /Projeto-AFM/app/views/dashboard.php"
         );
 
         exit;
@@ -142,4 +139,8 @@ switch ($acao)
     case 'editar':
         $controller->atualizar();
         break;
+
+    default:
+        die("Ação inválida.");
 }
+?>

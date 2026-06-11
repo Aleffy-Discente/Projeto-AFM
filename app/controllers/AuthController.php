@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../models/Usuario.php';
 
 class AuthController
@@ -7,12 +8,17 @@ class AuthController
     {
         session_start();
 
-        $email = trim($_POST['email']);
-        $senha = trim($_POST['senha']);
+        $email =
+            trim($_POST['email']);
 
-        $usuarioModel = new Usuario();
+        $senha =
+            trim($_POST['senha']);
 
-        $usuario = $usuarioModel
+        $usuarioModel =
+            new Usuario();
+
+        $usuario =
+            $usuarioModel
             ->findByEmail($email);
 
         if (
@@ -23,23 +29,22 @@ class AuthController
             )
         ) {
 
-            $_SESSION['erro'] = "Email ou senha inválidos.";
+            $_SESSION['erro'] =
+                "Email ou senha inválidos.";
 
             header(
-                "Location: /public/index.php"
+                "Location:
+                ../public/index.php"
             );
+
             exit;
         }
 
-        $_SESSION['user_id'] =
-            $usuario['id'];
+        $_SESSION['user_id'] = $usuario['id'];
 
-        $_SESSION['nome'] =
-            $usuario['nome'];
+        $_SESSION['nome'] = $usuario['nome'];
 
-        header(
-            "Location: /app/views/dashboard.php"
-        );
+        header("Location: ../views/dashboard.php");
 
         exit;
     }
@@ -47,29 +52,51 @@ class AuthController
     public function register()
     {
         $nome = trim($_POST['nome']);
+
         $email = trim($_POST['email']);
+
         $senha = trim($_POST['senha']);
 
-        if (
-            empty($nome) ||
-            empty($email) ||
-            empty($senha)
-        ) {
+        if (empty($nome) || empty($email) || empty($senha)) {
             die("Preencha todos os campos.");
         }
 
         $usuario = new Usuario();
+        $emailExiste = $usuario ->findByEmail($email);
 
-        $usuario->create(
-            $nome,
-            $email,
-            $senha
-        );
+        if ($emailExiste) {
+            die("Email já cadastrado.");
+        }
 
-        header(
-            "Location: /public/index.php"
-        );
+        $sucesso = $usuario->create(
+                $nome,
+                $email,
+                $senha
+            );
+
+        if (!$sucesso) {
+            die("Erro ao cadastrar.");
+        }
+
+        header("Location: ../public/index.php");
 
         exit;
     }
+}
+
+$controller = new AuthController();
+
+$acao = $_GET['acao'] ?? '';
+
+switch ($acao) {
+    case 'login':
+        $controller->login();
+        break;
+
+    case 'register':
+        $controller->register();
+        break;
+
+    default:
+        die("Ação inválida.");
 }

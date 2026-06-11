@@ -1,6 +1,6 @@
 <?php
 
-require_once '/../config/migrate.php';
+require_once '../config/migrate.php';
 
 Migration::run();
 
@@ -11,23 +11,11 @@ session_start();
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width,
-initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
-
-    <link
-        rel="stylesheet"
-        href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -44,8 +32,7 @@ initial-scale=1">
                 <p class="text-muted">Entre na sua conta</p>
 
             </div>
-
-            <form action="../app/controllers/AuthController.php?acao=login" method="POST">
+            <form action="/Projeto-AFM/app/controllers/AuthController.php?acao=login" method="POST">
 
                 <div class="mb-3">
 
